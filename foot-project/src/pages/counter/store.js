@@ -176,6 +176,10 @@ const store = new Vuex.Store({
     //清空购物车
     clearCart(state){
       state.choseData = [];
+      state.foodList.forEach((item)=>{
+        item.num = 0;
+      })
+      state.totalPrice = 0;
     },
     //确认提交
     sureOrderHandler(state){

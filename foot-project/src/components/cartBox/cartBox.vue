@@ -87,7 +87,7 @@
 	.cart-box .cart-btn{
 		height: 100%;
 		flex:1;
-		font-size: 40rpx;
+		font-size: 36rpx;
 		color: #fff;
 		background: #BF3539;
 		text-align: center;

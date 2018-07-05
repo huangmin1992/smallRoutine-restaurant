@@ -1,10 +1,11 @@
 <template>
   <div class="page-container">
     <div class="header">
-      <div class="header-bg"><image src="../../../static/images/index-bg.jpg"></image></div>
+      <div class="header-bg"><img src="../../../static/images/index-bg.jpg"></img></div>
         <div class="user-info flex">
             <div class="user-avatar">
               <image :src="userData.avatarUrl"></image>
+              <!-- <img :src="userData.avatarUrl" alt=""> -->
             </div>
             <div class="user-text">
               <div class="user-name">{{userData.name}}</div>
@@ -22,24 +23,34 @@
           <navigator url="/pages/homePage/main" hover-class="none">开始点餐</navigator>
       </div>
       <div class="page-listbox">
-        
+        <ListItem :listData="listData"></ListItem>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+
+  import ListItem from '@/components/listbox/listbox'
+
   export default{
     data(){
       return{
         userData:{
-            avatarUrl:'../../../static/images/avatar.jpg',
+            avatarUrl:'/static/images/avatar.jpg',
             name:'成都串串香',
             startTimes:'09:30',
             endTimes:'21:30',
             desc:'放大方式方法看见的撒开发加分的考生拉法基两个环节及时反馈多久啊是接口规范的上空经过风格发挥和高科技法国航空的方式管理肯定是攻击力就和法国的萨科十六的客服寄过来的开发商概况介绍给估计是劳动法规和捷克大使馆对抗苏联国家浮点数鬼斧神工犯得上广泛和格式的。'
-        }
+        },
+        listData:[
+          {icon:"/static/images/order-icon.png",name:"我的订单",url:"/pages/orderList/main"},
+          {icon:"/static/images/about-icon.png",name:"关于我们",url:"/pages/aboutAs/main"},
+        ]
       }
+    },
+    components:{
+      ListItem
     }
   }
 </script>

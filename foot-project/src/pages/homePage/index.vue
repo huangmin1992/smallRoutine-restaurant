@@ -119,7 +119,7 @@ export default {
 }
 .container.bodyHidden{
   overflow: hidden;
-  height: 100vh;
+  /*height: 100vh;*/
 }
 .foot-cart{
   position: fixed;

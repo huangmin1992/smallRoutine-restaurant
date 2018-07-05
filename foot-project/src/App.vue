@@ -12,6 +12,9 @@ export default {
 </script>
 
 <style>
+page{
+  font-size: 28rpx;
+}
 .container {
   /*height: 100%;*/
 /*  display: flex;

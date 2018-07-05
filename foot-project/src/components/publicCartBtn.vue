@@ -38,7 +38,7 @@
 		height: 40rpx;
 		border-radius: 50%;
 		border:1px solid #BF3539;
-		line-height: 30rpx;
+		line-height: 32rpx;
 		text-align: center;
 		color: #BF3539;
 		font-weight: 700;

@@ -83,7 +83,18 @@
 				wx.navigateBack(1)
 			},
 			sureHandler(){
-				store.commit('sureOrderHandler')
+				if(this.choseData.length<=0){
+					wx.showToast({
+						title: '您还未选择食品，不能提交订单',
+						icon: 'none',
+						duration: 2000
+					})
+					return;
+				}
+				wx.navigateTo({
+					url:'/pages/payBox/main'
+				})
+				// store.commit('sureOrderHandler')
 			},
 			deleteOrder(e){
 				let id = e.currentTarget.dataset.id
@@ -191,9 +202,10 @@
 	}
 	.order-body .order-textbox{
 		flex:1;
+		font-size: 32rpx;
 	}
 	.order-body .order-textbox .order-title{
-		font-size:40rpx;
+		font-size:36rpx;
 		padding-bottom:10rpx;
 	}
 	.order-body .order-textbox span{
@@ -209,8 +221,8 @@
 	}
 	.order-delete span{
 		display: block;
-		width: 86rpx;
-		height: 86rpx;
+		width: 60rpx;
+		height: 60rpx;
 		background: url(../../../static/images/delete-b.png)center no-repeat;
 		background-size: 100% 100%;
 	}
@@ -219,8 +231,8 @@
 		bottom: 0;
 		left: 0;
 		width: 100%;
-		height: 100rpx;
-		font-size: 40rpx;
+		height: 80rpx;
+		font-size: 32rpx;
 		text-align: center;
 		display: flex;
 		justify-content: space-between;
@@ -230,7 +242,7 @@
 		flex-basis: 50%;
 		flex-shrink: 0;
 		height: 100%;
-		line-height: 100rpx;
+		line-height: 80rpx
 	}
 	.order-btn .order-back{
 		background: #E6E6E6;
